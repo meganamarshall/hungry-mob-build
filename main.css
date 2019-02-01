@@ -4,20 +4,13 @@
     border: 1px solid black;
 }
 
-#caterpillar-head {
-    height: 100px;
-    width: 100px;
-    border-radius: 150px;
-    background: hotpink;
-    display: inline-block;
-    margin-top: 50px;
-}
 .body-segment {
     height: 80px;
     width: 80px;
     border-radius: 150px;
     display: inline-block;
     margin-top: 50px;
+    margin-left: -20px;
    
     
 }
@@ -37,4 +30,20 @@
 
 .dance-segment {
     margin-bottom: 25px;
+}
+
+img {
+    width: 25px;
+    margin: 5px;
+}
+
+.color-button {
+    border: 1px solid black;
+    margin: 5px;
+}
+
+#caterpillar-head {
+    height: 100px;
+    width: 100px;
+    margin-top: 50px;
 }

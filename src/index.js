@@ -2,25 +2,38 @@ const colorButtonsNode = document.getElementById('color-buttons');
 const canvasNode = document.getElementById('canvas');
 const transformNode = document.getElementById('transform-buttons');
 
-const colors = [ //might need to change to fruit objects list later
+const colors = [ 
     'magenta',
     'aqua',
     'lightcoral',
     'lawngreen'
 ];
 
+const imgSrc = [
+    '../assets/raspberry.jpeg',
+    '../assets/blueberry.png',
+    '../assets/apple.png',
+    '../assets/kiwi.png'
+];
+
 for(let index = 0; index < colors.length; index++) {
     let color = colors[index];
     const colorButtonNode = document.createElement('button');
-    colorButtonNode.textContent = color;
+    const imgNode = document.createElement('img');
+    imgNode.src = imgSrc[index];
+    //colorButtonNode.textContent = color;
     colorButtonNode.value = color;
     colorButtonNode.classList.add(color, 'color-button');
 
+
     colorButtonNode.addEventListener('click', function() {
-        paint(color);
-        console.log(color);
+        const countSegments = document.querySelectorAll('.body-segment').length;
+        if(countSegments < 6) {
+            paint(color);
+        }
     });
 
+    colorButtonNode.appendChild(imgNode);
     colorButtonsNode.appendChild(colorButtonNode);
 }
 
